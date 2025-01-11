@@ -1,0 +1,14 @@
+{
+  "ID": "259c1113-8a68-4f86-8c21-d97e759846c8",
+  "ActionKeyword": "plug",
+  "Disabled": false,
+  "IsGlobal": false,
+  "Name": "wordfinder",
+  "Author": "",
+  "Version": "1.0.0",
+  "Language": "csharp",
+  "Website": "",
+  "ExecuteFileName": "Community.PowerToys.Run.Plugin.wordfinder.dll",
+  "IcoPathDark": "Images\\wordfinder.dark.png",
+  "IcoPathLight": "Images\\wordfinder.light.png"
+}
