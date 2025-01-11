@@ -1,13 +1,13 @@
 {
   "ID": "259c1113-8a68-4f86-8c21-d97e759846c8",
-  "ActionKeyword": "plug",
+  "ActionKeyword": "wf",
   "Disabled": false,
   "IsGlobal": false,
   "Name": "wordfinder",
-  "Author": "",
+  "Author": "vijayv996",
   "Version": "1.0.0",
   "Language": "csharp",
-  "Website": "",
+  "Website": "https://www.github.com/vijayv996/wordfinder",
   "ExecuteFileName": "Community.PowerToys.Run.Plugin.wordfinder.dll",
   "IcoPathDark": "Images\\wordfinder.dark.png",
   "IcoPathLight": "Images\\wordfinder.light.png"
