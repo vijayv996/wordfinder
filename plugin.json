@@ -3,6 +3,7 @@
   "ActionKeyword": "wf",
   "Disabled": false,
   "IsGlobal": false,
+  "DynamicLoading": true,
   "Name": "wordfinder",
   "Author": "vijayv996",
   "Version": "1.0.0",

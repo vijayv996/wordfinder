@@ -51,6 +51,8 @@
 
     <ItemGroup>
       <PackageReference Include="Community.PowerToys.Run.Plugin.Dependencies" Version="*" />
+      <PackageReference Include="DatamuseDotNet" Version="1.1.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
 </Project>
