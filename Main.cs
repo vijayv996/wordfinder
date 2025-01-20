@@ -10,6 +10,8 @@ using Microsoft.PowerToys.Settings.UI.Library;
 using Wox.Infrastructure;
 using Wox.Plugin;
 using Wox.Plugin.Logger;
+using DatamuseDotNet;
+using System.Windows;
 
 namespace Community.PowerToys.Run.Plugin.wordfinder
 {
@@ -82,6 +84,14 @@ namespace Community.PowerToys.Run.Plugin.wordfinder
             return results;
         }
 
+
+        //public async Task<List<Result>> Retrieve(string searchTerm, bool delayedExecution)
+        //{
+        //    var results = new List<Result>();
+            
+
+        //    return results;
+        //}
         // TODO: return delayed query results (optional)
         public List<Result> Query(Query query, bool delayedExecution)
         {
@@ -94,6 +104,34 @@ namespace Community.PowerToys.Run.Plugin.wordfinder
             {
                 return results;
             }
+
+            string searchTerm = query.Search;
+            DatamuseClient client = new DatamuseClient();
+            DatamuseResultItem[] res = client.SpelledLike(Wildcard.StartsWith(searchTerm));
+
+            foreach (var item in res)
+            {
+                results.Add(new Result
+                {
+                    Title = item.word,
+                    SubTitle = "press enter to copy",
+                    IcoPath = _iconPath,
+                    Action = Action =>
+                    {
+                        try
+                        {
+                            Clipboard.SetText(item.word);
+                            return true;
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Exception("Copy failed", e, GetType());
+                        }
+                        return false;
+                    }
+                });
+            }
+
 
             return results;
         }
