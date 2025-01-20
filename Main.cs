@@ -107,7 +107,12 @@ namespace Community.PowerToys.Run.Plugin.wordfinder
 
             string searchTerm = query.Search;
             DatamuseClient client = new DatamuseClient();
-            DatamuseResultItem[] res = client.SpelledLike(Wildcard.StartsWith(searchTerm));
+            DatamuseResultItem[] res;
+            if (searchTerm.Length > 1) {
+                res = client.SpelledLike(Wildcard.StartsWith(searchTerm));
+            } else {
+                res = client.SpelledLike(Wildcard.StartsEndsWith(searchTerm[0],searchTerm[1]));
+            }
 
             foreach (var item in res)
             {
